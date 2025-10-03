@@ -240,7 +240,7 @@ import { useProfileStore } from '@/stores/profile'
 const profileStore = useProfileStore()
 
 const viewMode = ref('structured') // 'pdf' or 'structured'
-const pdfUrl = ref('/portfolio/Esh James (PHP).pdf')
+const pdfUrl = ref('/portfolio/Esh James (PHPLaravel).pdf')
 
 const toggleView = () => {
   viewMode.value = viewMode.value === 'pdf' ? 'structured' : 'pdf'

@@ -1,8 +1,8 @@
 {
   "personalInfo": {
     "name": "Esh James",
-    "title": "Senior Full Stack Developer",
-    "email": "eshjames01@gmail.com",
+    "title": "Senior Full Stack Developer & PHP",
+    "email": "eshbanj24@gmail.com",
     "phone": "+1(512) 264-5258",
     "location": "Chicago, IL 60659",
     "linkedin": "https://linkedin.com/in/eshjames",
@@ -46,7 +46,7 @@
     {
       "company": "HashiCorp", 
       "position": "Senior Full-Stack Developer",
-      "period": "2018 - 2021",
+      "period": "2019 - 2021",
       "highlights": [
         "Architected multi-tenant SaaS solutions with scalable backend logic and modular APIs, cutting feature development time by 30%",
         "Built dynamic, reusable Vue.js components for responsive and engaging front-end interfaces",
@@ -59,8 +59,8 @@
     },
     {
       "company": "Systems Limited",
-      "position": "Laravel Backend Engineer",
-      "period": "2016 - 2018", 
+      "position": "PHP Developer",
+      "period": "2017 - 2019", 
       "highlights": [
         "Modernized legacy PHP systems by introducing Laravel frameworks, reducing technical debt",
         "Delivered client-focused modules and APIs to support diverse business requirements",
@@ -152,51 +152,9 @@
   "projects": [
     {
       "id": 1,
-      "title": "Breaker19 – Oil & Gas 3PL Platform",
-      "description": "Developed the carrier portal frontend for Breaker19, an Uber-style trucking platform serving the oil & gas industry. Built real-time logistics management system with 15,000+ vetted carrier network, 24/7 dispatch operations, and automated billing integration. The platform enables oilfield suppliers and operators to save an average of 18% on transportation costs through competitive carrier bidding.",
-      "technologies": ["Laravel", "Vue.js", "RESTful APIs", "MySQL", "Real-time Updates", "Mobile Integration"],
-      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "github": "https://github.com/eshjames/breaker19-portal",
-      "demo": "https://www.breaker19.app/",
-      "website": "https://www.breaker19.app/",
-      "category": "Logistics Tech",
-      "featured": true,
-      "highlights": [
-        "Serves 1,000's of oilfield suppliers & operators",
-        "15,000+ vetted carrier network",
-        "Average 18% cost savings through competitive bidding",
-        "24/7 dispatch operations",
-        "Real-time logistics tracking",
-        "Automated billing and compliance integration"
-      ],
-      "location": "Houston, TX"
-    },
-    {
-      "id": 2, 
-      "title": "SheenPay – Halal BNPL Platform",
-      "description": "Built a Shariah-compliant fintech platform enabling customers to purchase mobile phones and electronics through halal installments. Developed configurable multi-step forms, dynamic email modules with live template editing, and integrated payment processing. The platform offers 4 easy installments with Shariah-ready compliance for the Pakistani market.",
-      "technologies": ["Laravel", "Blade Templates", "MySQL", "RESTful APIs", "Payment Gateway", "Mobile App", "Cron Jobs"],
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", 
-      "github": "https://github.com/eshjames/sheenpay",
-      "demo": "https://sheenpay.pk/",
-      "website": "https://sheenpay.pk/",
-      "category": "Fintech",
-      "featured": true,
-      "highlights": [
-        "Shariah-compliant halal financing",
-        "4 easy installment payment system",
-        "Mobile app available on Google Play",
-        "Multi-step form automation",
-        "Live template editing system",
-        "Integrated email notifications"
-      ],
-      "location": "Pakistan"
-    },
-    {
-      "id": 3,
       "title": "TransPro Alliance CRM",
       "description": "Developed a comprehensive CRM system for TransPro Alliance transportation management. Built scalable backend architecture with role-based access control, integrated analytics dashboard, and automated workflow management for transport alliance operations. The platform streamlines partnership coordination, route optimization, and fleet management.",
-      "technologies": ["Laravel", "Vue.js", "MySQL", "RESTful APIs", "Analytics Dashboard", "Role Management"],
+      "technologies": ["Laravel", "Vue.js", "MySQL", "RESTful APIs", "AWS (EC2, RDS, S3)", "Docker"],
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "github": "https://github.com/eshjames/transpro-crm", 
       "demo": "https://crm.transproalliance.com/",
@@ -212,6 +170,48 @@
         "Automated workflow management"
       ],
       "location": "Remote/Various"
+    },
+    {
+      "id": 2, 
+      "title": "SheenPay – Buy Now, Pay Later (BNPL) Platform",
+      "description": "Engineered a configurable multi-step form system for workflow automation, built a dynamic email module with live template editing, and contributed to scalable architecture using Laravel Service Container. Integrated RESTful APIs, Firebase notifications, and optimized backend automation with cron jobs and queues to enhance system performance and user engagement.",
+      "technologies": ["Laravel", "Blade Templates", "MySQL", "RESTful APIs", "Firebase", "Cron Jobs", "Queues", "HTML/CSS/JS"],
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", 
+      "github": "https://github.com/eshjames/sheenpay",
+      "demo": "https://sheenpay.pk/",
+      "website": "https://sheenpay.pk/",
+      "category": "Fintech",
+      "featured": true,
+      "highlights": [
+        "Shariah-compliant halal financing",
+        "4 easy installment payment system",
+        "Streamlined reusable Vue.js components, saving 100+ hours of development time annually",
+        "Multi-step form automation",
+        "Live template editing system",
+        "Encouraged team-wide adoption of modern practices"
+      ],
+      "location": "Pakistan"
+    },
+    {
+      "id": 3,
+      "title": "Breaker19 – Carrier Portal",
+      "description": "Implemented RESTful APIs and backend services to power an Uber-style trucking platform, while developing the Carrier Portal frontend in Vue.js for real-time logistics management.",
+      "technologies": ["Laravel", "Vue.js", "RESTful APIs", "MySQL"],
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "github": "https://github.com/eshjames/breaker19-portal",
+      "demo": "https://www.breaker19.app/",
+      "website": "https://www.breaker19.app/",
+      "category": "Logistics Tech",
+      "featured": true,
+      "highlights": [
+        "Serves 1,000's of oilfield suppliers & operators",
+        "15,000+ vetted carrier network",
+        "Average 18% cost savings through competitive bidding",
+        "24/7 dispatch operations",
+        "Real-time logistics tracking",
+        "Automated billing and compliance integration"
+      ],
+      "location": "Houston, TX"
     }
   ],
   "certifications": [
