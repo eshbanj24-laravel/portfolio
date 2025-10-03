@@ -56,16 +56,18 @@ const routes = [
     path: '/portfolio/:pathMatch(.*)*',
     redirect: '/portfolio'
   },
-  // Catch any undefined routes and redirect to home
+  // Catch any undefined routes and redirect to home here
   {
     path: '/:pathMatch(.*)*',
     redirect: '/'
   },
 ]
 
-// Get base URL from environment or default to portfolio base path
+// Get base URL from environment
 const getBaseUrl = () => {
-  return import.meta.env.VITE_BASE_URL || '/portfolio/'
+  // GitHub Pages: repository name becomes URL path
+  // For repository 'portfolio': eshbanj24-laravel.github.io/portfolio/
+  return '/portfolio/'
 }
 
 const router = createRouter({

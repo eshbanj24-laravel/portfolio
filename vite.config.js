@@ -18,5 +18,8 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     sourcemap: true,
   },
-  base: process.env.BASE_URL || '/portfolio/',
+  // GitHub Pages deployment configuration
+  // Repository: eshbanj24-laravel.github.io/portfolio
+  // The repository name becomes part of the URL (/portfolio/)
+  base: '/portfolio/',
 }))
