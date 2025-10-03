@@ -51,16 +51,31 @@ const routes = [
       description: 'Get in touch with Esh James',
     },
   },
+  // Catch typo routes and redirect to correct paths
+  {
+    path: '/porfolio/:pathMatch(.*)*',
+    redirect: '/portfolio'
+  },
+  // Catch any undefined routes and redirect to home
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
+  },
 ]
 
+// Get base URL from environment or default to portfolio base path
+const getBaseUrl = () => {
+  return import.meta.env.VITE_BASE_URL || '/portfolio/'
+}
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(getBaseUrl()),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
     } else {
-      return { top: 0 }
+  return { top: 0 }
     }
   },
 })
