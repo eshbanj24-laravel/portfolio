@@ -1,0 +1,231 @@
+{
+  "personalInfo": {
+    "name": "Esh James",
+    "title": "Senior Full Stack Developer & PHP",
+    "email": "eshjames01@gmail.com",
+    "phone": "+1(512) 264-5258",
+    "location": "Chicago, IL 60659",
+    "linkedin": "https://linkedin.com/in/eshjames",
+    "github": "https://github.com/eshjames",
+    "website": "https://eshjames.dev"
+  },
+  "summary": "Senior Full-Stack Developer with 8+ years of experience delivering scalable web applications using Laravel, Vue.js, React, and modern PHP frameworks. Skilled in architecting SaaS platforms, multi-tenant systems, and cloud-native solutions with AWS and DigitalOcean. Adept at performance optimization, API integrations, and secure payment systems while ensuring seamless user experiences. Proven track record in reducing deployment cycles through CI/CD automation, boosting application performance by 45%, and scaling platforms for 200%+ growth. Recognized for technical leadership, mentoring teams, and driving remote collaboration to align engineering solutions with business objectives.",
+  "experience": [
+    {
+      "company": "Hubstaff",
+      "position": "Senior Full-Stack Developer",
+      "period": "2021 - Present",
+      "highlights": [
+        "Architected and delivered enterprise SaaS applications with microservices and modular design",
+        "Spearheaded AWS migrations and enforced CI/CD pipelines, ensuring zero-downtime releases",
+        "Modernized performance and reliability for large-scale systems",
+        "Partnered with stakeholders to define product roadmaps and align technical direction with business growth",
+        "Enhanced security through advanced authentication, role-based permissions, and data protection practices",
+        "Integrated complex third-party APIs, payment systems, and real-time services",
+        "Executed CI/CD pipelines, reducing release cycles from 2 weeks to 2 days",
+        "Mentored developers, standardized code quality practices, and fostered team innovation",
+        "Collaborated cross-functionally with design, product, and QA teams to deliver seamless user experiences"
+      ],
+      "tasks": ["Architecting SaaS platforms", "AWS migrations", "CI/CD optimization", "Team mentoring", "API integrations"]
+    },
+    {
+      "company": "Freelance/Contract Developer",
+      "position": "Senior Full-Stack Developer",
+      "period": "2019 - Present",
+      "highlights": [
+        "Developed Breaker19 carrier portal frontend - Uber-style trucking platform for oil & gas industry with 15,000+ carrier network",
+        "Built SheenPay halal BNPL platform - Shariah-compliant fintech solution with 4-installment payment system",
+        "Created TransPro Alliance CRM - comprehensive transportation management system with route optimization",
+        "Implemented real-time logistics tracking and 24/7 dispatch operations for heavy industry clients",
+        "Engineered mobile-first responsive interfaces with Vue.js for logistics and transportation platforms",
+        "Developed automated workflow systems and dynamic form builders for complex business processes",
+        "Built analytics dashboards and reporting systems for transport alliance coordination"
+      ],
+      "tasks": ["Carrier Portal Development", "BNPL Platform Development", "CRM System Architecture", "Real-time Logistics", "Mobile App Integration"]
+    },
+    {
+      "company": "HashiCorp", 
+      "position": "Senior Full-Stack Developer",
+      "period": "2018 - 2021",
+      "highlights": [
+        "Architected multi-tenant SaaS solutions with scalable backend logic and modular APIs, cutting feature development time by 30%",
+        "Built dynamic, reusable Vue.js components for responsive and engaging front-end interfaces",
+        "Improved application reliability through proactive monitoring, query optimization, and caching strategies",
+        "Coordinated closely with design and product teams to ensure consistent delivery of high-value features",
+        "Accelerated development workflows with reusable codebases and shared libraries",
+        "Created deployment strategies that improved efficiency and reduced delivery bottlenecks"
+      ],
+      "tasks": ["Multi-tenant architecture", "Vue.js development", "Performance optimization", "Team coordination"]
+    },
+    {
+      "company": "Systems Limited",
+      "position": "Laravel Backend Engineer",
+      "period": "2016 - 2018", 
+      "highlights": [
+        "Modernized legacy PHP systems by introducing Laravel frameworks, reducing technical debt",
+        "Delivered client-focused modules and APIs to support diverse business requirements",
+        "Migrated legacy PHP systems to Laravel, decreasing technical debt by 60%",
+        "Planned and normalized relational databases for long-term scalability and maintainability",
+        "Performed in-depth debugging, testing, and documentation to ensure application stability",
+        "Collaborated in Agile sprints, consistently delivering features ahead of deadlines"
+      ],
+      "tasks": ["Legacy migration", "Laravel development", "Database design", "API development", "Agile development"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor's of Science",
+      "institution": "Forman Christian College, Lahore",
+      "period": "2012 - 2016",
+      "description": "Computer Science major with focus on web development and system architecture"
+    }
+  ],
+  "skills": {
+    "languagesFrameworks": [
+      { "name": "PHP", "level": 95 },
+      { "name": "Laravel", "level": 92 },
+      { "name": "JavaScript", "level": 90 },
+      { "name": "Vue.js", "level": 88 },
+      { "name": "React.js", "level": 85 },
+      { "name": "jQuery", "level": 80 },
+      { "name": "Node.js", "level": 75 }
+    ],
+    "frontendDevelopment": [
+      { "name": "HTML5", "level": 95 },
+      { "name": "CSS3", "level": 90 },
+      { "name": "Bootstrap", "level": 92 },
+      { "name": "Tailwind CSS", "level": 88 },
+      { "name": "Responsive UI/UX", "level": 94 }
+    ],
+    "databases": [
+      { "name": "MySQL", "level": 93 },
+      { "name": "PostgreSQL", "level": 85 },
+      { "name": "MongoDB", "level": 80 }
+    ],
+    "apisIntegrations": [
+      { "name": "RESTful APIs", "level": 94 },
+      { "name": "GraphQL", "level": 82 },
+      { "name": "SOAP", "level": 78 },
+      { "name": "JSON", "level": 90 },
+      { "name": "XML", "level": 75 },
+      { "name": "Payment Gateways", "level": 88 }
+    ],
+    "testingQa": [
+      { "name": "PHPUnit", "level": 90 },
+      { "name": "TDD/TDD", "level": 85 },
+      { "name": "Debugging", "level": 92 },
+      { "name": "Code Review", "level": 94 }
+    ],
+    "devopsTools": [
+      { "name": "Git", "level": 95 },
+      { "name": "GitHub/GitLab", "level": 90 },
+      { "name": "Docker", "level": 88 },
+      { "name": "Composer", "level": 92 },
+      { "name": "Nginx", "level": 85 },
+      { "name": "Apache", "level": 88 }
+    ],
+    "cloudDeployment": [
+      { "name": "AWS (EC2, S3, RDS)", "level": 90 },
+      { "name": "DigitalOcean", "level": 85 },
+      { "name": "CI/CD Pipelines", "level": 92 },
+      { "name": "cPanel", "level": 80 },
+      { "name": "Laravel Forge", "level": 90 }
+    ],
+    "professionalSkills": [
+      { "name": "System Architecture", "level": 92 },
+      { "name": "Agile/Scrum", "level": 90 },
+      { "name": "Requirement Analysis", "level": 88 },
+      { "name": "Leadership & Mentoring", "level": 89 },
+      { "name": "Strategic Planning", "level": 85 },
+      { "name": "Stakeholder Collaboration", "level": 91 },
+      { "name": "Problem-Solving", "level": 94 },
+      { "name": "Project Delivery", "level": 93 }
+    ]
+  },
+  "achievements": [
+    "Increased application speed by 45% through database and caching optimization",
+    "Boosted team efficiency by mentoring developers and introducing coding standards", 
+    "Migrated platforms to AWS, reducing costs by 20% and improving uptime",
+    "Reduced release cycles from weeks to days by implementing CI/CD pipelines",
+    "Received recognition for technical leadership and driving product innovation"
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Breaker19 – Oil & Gas 3PL Platform",
+      "description": "Developed the carrier portal frontend for Breaker19, an Uber-style trucking platform serving the oil & gas industry. Built real-time logistics management system with 15,000+ vetted carrier network, 24/7 dispatch operations, and automated billing integration. The platform enables oilfield suppliers and operators to save an average of 18% on transportation costs through competitive carrier bidding.",
+      "technologies": ["Laravel", "Vue.js", "RESTful APIs", "MySQL", "Real-time Updates", "Mobile Integration"],
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "github": "https://github.com/eshjames/breaker19-portal",
+      "demo": "https://www.breaker19.app/",
+      "website": "https://www.breaker19.app/",
+      "category": "Logistics Tech",
+      "featured": true,
+      "highlights": [
+        "Serves 1,000's of oilfield suppliers & operators",
+        "15,000+ vetted carrier network",
+        "Average 18% cost savings through competitive bidding",
+        "24/7 dispatch operations",
+        "Real-time logistics tracking",
+        "Automated billing and compliance integration"
+      ],
+      "location": "Houston, TX"
+    },
+    {
+      "id": 2, 
+      "title": "SheenPay – Halal BNPL Platform",
+      "description": "Built a Shariah-compliant fintech platform enabling customers to purchase mobile phones and electronics through halal installments. Developed configurable multi-step forms, dynamic email modules with live template editing, and integrated payment processing. The platform offers 4 easy installments with Shariah-ready compliance for the Pakistani market.",
+      "technologies": ["Laravel", "Blade Templates", "MySQL", "RESTful APIs", "Payment Gateway", "Mobile App", "Cron Jobs"],
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", 
+      "github": "https://github.com/eshjames/sheenpay",
+      "demo": "https://sheenpay.pk/",
+      "website": "https://sheenpay.pk/",
+      "category": "Fintech",
+      "featured": true,
+      "highlights": [
+        "Shariah-compliant halal financing",
+        "4 easy installment payment system",
+        "Mobile app available on Google Play",
+        "Multi-step form automation",
+        "Live template editing system",
+        "Integrated email notifications"
+      ],
+      "location": "Pakistan"
+    },
+    {
+      "id": 3,
+      "title": "TransPro Alliance CRM",
+      "description": "Developed a comprehensive CRM system for TransPro Alliance transportation management. Built scalable backend architecture with role-based access control, integrated analytics dashboard, and automated workflow management for transport alliance operations. The platform streamlines partnership coordination, route optimization, and fleet management.",
+      "technologies": ["Laravel", "Vue.js", "MySQL", "RESTful APIs", "Analytics Dashboard", "Role Management"],
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "github": "https://github.com/eshjames/transpro-crm", 
+      "demo": "https://crm.transproalliance.com/",
+      "website": "https://crm.transproalliance.com/",
+      "category": "CRM Solutions",
+      "featured": true,
+      "highlights": [
+        "Transportation alliance management",
+        "Route optimization algorithms",
+        "Fleet management integration",
+        "Partnership coordination tools",
+        "Analytics and reporting dashboard",
+        "Automated workflow management"
+      ],
+      "location": "Remote/Various"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "description": "Professional certification in designing distributed systems on AWS"
+    },
+    {
+      "name": "Laravel Certified Developer", 
+      "issuer": "Laravel LLC",
+      "date": "2021",
+      "description": "Professional certification in Laravel framework development"
+    }
+  ]
+}

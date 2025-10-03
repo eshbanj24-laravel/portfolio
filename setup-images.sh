@@ -1,0 +1,14 @@
+# Create placeholder images directory
+mkdir -p public/images
+
+# Create a simple placeholder SVG for project images
+cat > public/images/project-placeholder.svg << 'EOF'
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F3F4F6"/>
+  <rect x="50" y="50" width="300" height="200" fill="#9CA3AF" rx="8"/>
+  <rect x="100" y="100" width="200" height="100" fill="#6B7280" rx="4"/>
+  <text x="200" y="160" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Project Image</text>
+</svg>
+EOF
+
+echo "Placeholder images created successfully!"
