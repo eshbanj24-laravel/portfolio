@@ -167,22 +167,24 @@ class="success-message">
                   <span>LinkedIn</span>
                 </a>
                 <a
-                  href="https://twitter.com/eshjames"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="social-link"
-                >
-                  <i class="fab fa-twitter" />
-                  <span>Twitter</span>
-                </a>
-                <a
-                  href="https://dev.to/eshjames"
+                  v-if="profileStore.personalInfo.devto"
+                  :href="profileStore.personalInfo.devto"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="social-link"
                 >
                   <i class="fab fa-dev" />
                   <span>Dev.to</span>
+                </a>
+                <a
+                  v-if="profileStore.personalInfo.website"
+                  :href="profileStore.personalInfo.website"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link"
+                >
+                  <i class="fas fa-globe" />
+                  <span>Website</span>
                 </a>
               </div>
             </div>

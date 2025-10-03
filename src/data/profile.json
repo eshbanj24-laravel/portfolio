@@ -5,9 +5,11 @@
     "email": "eshbanj24@gmail.com",
     "phone": "+1(512) 264-5258",
     "location": "Chicago, IL 60659",
-    "linkedin": "https://linkedin.com/in/eshjames",
-    "github": "https://github.com/eshjames",
-    "website": "https://eshjames.dev"
+    "linkedin": "",
+    "github": "https://github.com/eshbanj24-laravel",
+    "website": "",
+    "twitter": "",
+    "devto": ""
   },
   "summary": "Senior Full-Stack Developer with 8+ years of experience delivering scalable web applications using Laravel, Vue.js, React, and modern PHP frameworks. Expert in architecting SaaS platforms, multi-tenant systems, and complex web solutions. Highly skilled in performance optimization, API integrations, and secure payment systems while ensuring seamless user experiences within Laravel ecosystem. Proven track record boosting application performance by 45% and scaling platforms for 200%+ growth through robust development practices. Recognized for technical leadership, mentoring teams, and driving remote collaboration to align engineering solutions with business objectives.",
   "experience": [

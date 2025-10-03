@@ -60,6 +60,10 @@
               <strong>Website:</strong>
               <a :href="profileStore.personalInfo.website" target="_blank">{{ profileStore.personalInfo.website.replace('https://', '') }}</a>
             </div>
+            <div class="info-item" v-if="profileStore.personalInfo.devto">
+              <strong>Dev.to:</strong>
+              <a :href="profileStore.personalInfo.devto" target="_blank">{{ profileStore.personalInfo.devto.replace('https://', '') }}</a>
+            </div>
           </div>
         </div>
 
