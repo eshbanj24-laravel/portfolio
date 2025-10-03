@@ -1,0 +1,197 @@
+{
+  "project": {
+    "name": "esh-james-portfolio",
+    "version": "1.0.0",
+    "description": "Esh James - DevOps/PHP Developer Portfolio",
+    "type": "Vue.js SPA Portfolio",
+    "owner": "Esh James",
+    "email": "eshjames01@gmail.com",
+    "location": "Chicago, IL 60659",
+    "phone": "+1(512) 264-5258"
+  },
+  "repository": {
+    "url": "https://github.com/eshbanj24-laravel/portfolio",
+    "structure": "two-branch setup",
+    "branches": {
+      "main": "Source code branch",
+      "gh-pages": "Deployment branch (contains built files only)"
+    },
+    "deployment_url": "https://eshbanj24-laravel.github.io/portfolio"
+  },
+  "technology_stack": {
+    "frontend": {
+      "framework": "Vue 3",
+      "composition_api": "Script Setup",
+      "state_management": "Pinia",
+      "routing": "Vue Router 4",
+      "build_tool": "Vite 5.4.20",
+      "css_framework": "Tailwind CSS",
+      "icons": "Font Awesome 6.4.0"
+    },
+    "development_tools": {
+      "linter": "ESLint",
+      "formatter": "Prettier",
+      "package_manager": "npm",
+      "node_version": "unknown"
+    },
+    "assets": {
+      "fonts": "Google Fonts (Inter)",
+      "image_format": "SVG, PNG",
+      "favicon": "favicon.svg"
+    }
+  },
+  "build_configuration": {
+    "vite_config": {
+      "base_url": "/portfolio/",
+      "plugins": ["Vue"],
+      "alias": {
+        "@": "src"
+      },
+      "server": {
+        "port": 3000,
+        "open": true
+      },
+      "build_output": "dist/",
+      "sourcemaps": true
+    },
+    "router_config": {
+      "history_mode": "createWebHistory",
+      "base_path": "/portfolio/",
+      "routes": [
+        {"path": "/", "name": "Home", "component": "Home.vue"},
+        {"path": "/about", "name": "About", "component": "About.vue"},
+        {"path": "/projects", "name": "Projects", "component": "Projects.vue"},
+        {"path": "/resume", "name": "Resume", "component": "Resume.vue"},
+        {"path": "/contact", "name": "Contact", "component": "Contact.vue"}
+      ],
+      "catch_all_routes": true,
+      "dynamic_titles": true
+    }
+  },
+  "current_issue": {
+    "error": "GET https://eshbanj24-laravel.github.io/portfolio/src/main.js net::ERR_ABORTED 404",
+    "description": "Site loads but JavaScript bundle not found",
+    "expected_bundle": "/portfolio/assets/index-DpcLCJun.js",
+    "actual_request": "/portfolio/src/main.js",
+    "diagnosis": "Either wrong branch uploaded, missing assets folder, or old cached HTML"
+  },
+  "file_structure": {
+    "source_files": {
+      "src/": "Source code directory",
+      "src/main.js": "Application entry point",
+      "src/App.vue": "Root component",
+      "src/router/": "Routing configuration",
+      "src/stores/": "Pinia state management",
+      "src/views/": "Page components",
+      "src/components/": "Reusable components",
+      "src/services/": "API and utility services",
+      "src/data/profile.json": "Centralized profile data"
+    },
+    "build_output": {
+      "dist/": "Build output directory",
+      "dist/index.html": "Main HTML file",
+      "dist/assets/": "Bundled CSS/JS assets",
+      "dist/.nojekyll": "GitHub Pages configuration file",
+      "dist/favicon.svg": "Site icon",
+      "dist/images/": "Static images"
+    }
+  },
+  "deployment_configuration": {
+    "github_pages": {
+      "source_branch": "main",
+      "deployment_branch": "gh-pages",
+      "custom_domain": false,
+      "jekyll_disabled": true,
+      "configuration": {
+        "source": "Deploy from a branch",
+        "branch": "gh-pages",
+        "folder": "/ (root)"
+      }
+    },
+    "build_scripts": {
+      "dev": "npm run dev",
+      "build": "npm run build",
+      "build:github": "vite build --base /portfolio/",
+      "deploy:gh": "npm run build:github"
+    }
+  },
+  "dependencies": {
+    "production": {
+      "vue": "^3.4.0",
+      "vue-router": "^4.2.5",
+      "pinia": "^2.1.7",
+      "@vueuse/core": "^10.7.0",
+      "axios": "^1.6.2"
+    },
+    "development": {
+      "@vitejs/plugin-vue": "^4.5.2",
+      "vite": "^5.4.20",
+      "tailwindcss": "^3.4.1",
+      "autoprefixer": "^10.4.16",
+      "postcss": "^8.4.32",
+      "eslint": "^8.55.0",
+      "prettier": "^3.1.1",
+      "pdf-lib": "^1.17.1",
+      "pdfjs-dist": "^4.0.379"
+    }
+  },
+  "content_data": {
+    "profile_info": {
+      "title": "Senior Full Stack Developer & PHP",
+      "experience": "8+ years",
+      "specialization": ["Laravel", "Vue.js", "AWS", "DevOps", "Multi-tenant SaaS"],
+      "current_focus": "DevOps and Cloud Infrastructure"
+    },
+    "projects": [
+      {
+        "name": "SaaS Multi-Tenant Platform",
+        "tech": ["Laravel", "Vue.js", "MySQL", "AWS", "Docker"],
+        "highlights": ["Role-based access control", "Subscription billing", "CI/CD pipelines"]
+      },
+      {
+        "name": "SheenPay - BNPL Platform",
+        "tech": ["Laravel", "Blade Templates", "MySQL", "Firebase"],
+        "highlights": ["Multi-step forms", "Dynamic email templates", "RESTful APIs"]
+      },
+      {
+        "name": "Breaker19 - Carrier Portal",
+        "tech": ["Laravel", "Vue.js", "RESTful APIs", "MySQL"],
+        "highlights": ["Uber-style trucking platform", "Real-time logistics management"]
+      }
+    ]
+  },
+  "troubleshooting": {
+    "common_issues": {
+      "404_main_js": {
+        "cause": "Wrong branch uploaded or missing assets folder",
+        "solution": "Ensure gh-pages branch contains dist/ contents",
+        "verification": "Check URL returns index-DpcLCJun.js not src/main.js"
+      },
+      "base_path_mismatch": {
+        "cause": "Vite base path doesn't match GitHub Pages URL structure",
+        "solution": "Set base: '/portfolio/' in vite.config.js",
+        "current_setting": "/portfolio/"
+      },
+      "jekyll_processing": {
+        "cause": "GitHub Pages processing CSS/JS files incorrectly",
+        "solution": "Add .nojekyll file to disable Jekyll",
+        "status": "Implemented"
+      }
+    },
+    "verification_urls": {
+      "site_loads": "https://eshbanj24-laravel.github.io/portfolio/",
+      "js_bundle": "https://eshbanj24-laravel.github.io/portfolio/assets/index-DpcLCJun.js",
+      "css_bundle": "https://eshbanj24-laravel.github.io/portfolio/assets/index-sCSPopRV.css",
+      "jekyll_disabled": "https://eshbanj24-laravel.github.io/portfolio/.nojekyll"
+    }
+  },
+  "debugging_steps": [
+    "1. Verify gh-pages branch contains dist/ contents",
+    "2. Check GitHub Pages settings: Source = gh-pages branch",
+    "3. Confirm .nojekyll file exists in gh-pages branch",
+    "4. Test direct asset URLs for 404 errors",
+    "5. Clear browser cache and hard refresh",
+    "6. Wait up to 10 minutes for GitHub Pages to update",
+    "7. Check repository file structure matches expected build output"
+  ]
+}
