@@ -53,7 +53,7 @@ const routes = [
   },
   // Catch typo routes and redirect to correct paths
   {
-    path: '/porfolio/:pathMatch(.*)*',
+    path: '/portfolio/:pathMatch(.*)*',
     redirect: '/portfolio'
   },
   // Catch any undefined routes and redirect to home
