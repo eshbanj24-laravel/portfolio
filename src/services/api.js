@@ -148,9 +148,9 @@ export const resumeService = {
         skills: ['PHP', 'Laravel', 'AWS', 'Docker', 'Kubernetes'],
         experience: [
           {
-            title: 'Senior DevOps Engineer',
-            company: 'Tech Solutions Inc.',
-            period: '2022 - Present',
+            title: 'Senior Full Stack Developer',
+            company: 'Hubstaff',
+            period: '2021 - Present',
           },
         ],
         education: [

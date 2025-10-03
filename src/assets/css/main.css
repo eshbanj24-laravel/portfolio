@@ -178,3 +178,92 @@ body {
     padding: 1rem;
   }
 }
+
+/* ===== CONSISTENCY ENHANCEMENTS ===== */
+
+/* Enhanced button sizes */
+.btn-large {
+  padding: 1rem 2rem !important;
+  font-size: 1.1rem !important;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
+}
+
+/* Icon consistency */
+.btn i {
+  font-size: 1rem;
+  line-height: 1;
+  margin-right: 0.5rem;
+}
+
+.btn i:last-child {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+.btn-small i {
+  font-size: 0.875rem;
+}
+
+.btn-large i {
+  font-size: 1.125rem;
+}
+
+/* Enhanced project overlay buttons */
+.project-link,
+.action-btn {
+  width: 50px;
+  height: 50px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.project-link:hover,
+.action-btn:hover {
+  transform: scale(1.1);
+  background: var(--color-primary-dark);
+}
+
+/* Enhanced section styling */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Enhanced tech tags */
+.tech-tag {
+  display: inline-block;
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 0.375rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--color-border);
+}

@@ -1,7 +1,7 @@
 {
   "personalInfo": {
     "name": "Esh James",
-    "title": "Senior Full Stack Developer & PHP",
+    "title": "Senior Full Stack Developer",
     "email": "eshjames01@gmail.com",
     "phone": "+1(512) 264-5258",
     "location": "Chicago, IL 60659",
@@ -9,7 +9,7 @@
     "github": "https://github.com/eshjames",
     "website": "https://eshjames.dev"
   },
-  "summary": "Senior Full-Stack Developer with 8+ years of experience delivering scalable web applications using Laravel, Vue.js, React, and modern PHP frameworks. Skilled in architecting SaaS platforms, multi-tenant systems, and cloud-native solutions with AWS and DigitalOcean. Adept at performance optimization, API integrations, and secure payment systems while ensuring seamless user experiences. Proven track record in reducing deployment cycles through CI/CD automation, boosting application performance by 45%, and scaling platforms for 200%+ growth. Recognized for technical leadership, mentoring teams, and driving remote collaboration to align engineering solutions with business objectives.",
+  "summary": "Senior Full-Stack Developer with 8+ years of experience delivering scalable web applications using Laravel, Vue.js, React, and modern PHP frameworks. Expert in architecting SaaS platforms, multi-tenant systems, and complex web solutions. Highly skilled in performance optimization, API integrations, and secure payment systems while ensuring seamless user experiences within Laravel ecosystem. Proven track record boosting application performance by 45% and scaling platforms for 200%+ growth through robust development practices. Recognized for technical leadership, mentoring teams, and driving remote collaboration to align engineering solutions with business objectives.",
   "experience": [
     {
       "company": "Hubstaff",
@@ -17,16 +17,16 @@
       "period": "2021 - Present",
       "highlights": [
         "Architected and delivered enterprise SaaS applications with microservices and modular design",
-        "Spearheaded AWS migrations and enforced CI/CD pipelines, ensuring zero-downtime releases",
+        "Led platform migrations and deployment optimization, ensuring zero-downtime releases",
         "Modernized performance and reliability for large-scale systems",
         "Partnered with stakeholders to define product roadmaps and align technical direction with business growth",
         "Enhanced security through advanced authentication, role-based permissions, and data protection practices",
         "Integrated complex third-party APIs, payment systems, and real-time services",
-        "Executed CI/CD pipelines, reducing release cycles from 2 weeks to 2 days",
+        "Optimized development workflows, reducing release cycles from 2 weeks to 2 days",
         "Mentored developers, standardized code quality practices, and fostered team innovation",
         "Collaborated cross-functionally with design, product, and QA teams to deliver seamless user experiences"
       ],
-      "tasks": ["Architecting SaaS platforms", "AWS migrations", "CI/CD optimization", "Team mentoring", "API integrations"]
+      "tasks": ["Architecting SaaS platforms", "Platform migrations", "Workflow optimization", "Team mentoring", "API integrations"]
     },
     {
       "company": "Freelance/Contract Developer",
@@ -145,8 +145,8 @@
   "achievements": [
     "Increased application speed by 45% through database and caching optimization",
     "Boosted team efficiency by mentoring developers and introducing coding standards", 
-    "Migrated platforms to AWS, reducing costs by 20% and improving uptime",
-    "Reduced release cycles from weeks to days by implementing CI/CD pipelines",
+    "Migrated platforms to cloud infrastructure, reducing costs by 20% and improving uptime",
+    "Reduced release cycles from weeks to days through development workflow optimization",
     "Received recognition for technical leadership and driving product innovation"
   ],
   "projects": [

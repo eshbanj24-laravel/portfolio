@@ -1,54 +1,28 @@
 <template>
   <div class="resume-page">
-    <!-- Hero Section -->
     <section class="resume-hero">
       <div class="container">
         <div class="hero-content">
-          <h1 class="hero-title">Resume</h1>
+          <h1 class="hero-title">My Resume</h1>
           <p class="hero-subtitle">
-Download my resume or view it online
-</p>
-          <div class="resume-actions">
-            <a
-              href="/Esh James (PHP).pdf"
-              download="Esh_James_Resume.pdf"
-              class="btn btn-primary"
+            Professional experience and achievements in web development
+          </p>
+          
+          <!-- View Mode Toggle -->
+          <div class="view-toggle">
+            <button 
+              @click="toggleView" 
+              class="toggle-btn"
             >
-              <i class="fas fa-download" />
-              Download PDF
-            </a>
-            <button
-class="btn btn-secondary" @click="toggleView"
->
-              <i
-                :class="viewMode === 'pdf' ? 'fas fa-list' : 'fas fa-file-pdf'"
-              />
-              {{ viewMode === 'pdf' ? 'View Structured' : 'View PDF' }}
+              <i :class="viewMode === 'structured' ? 'fas fa-file-alt' : 'fas fa-file-pdf'"></i>
+              <span>{{ viewMode === 'structured' ? 'PDF View' : 'Structured View' }}</span>
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PDF Viewer -->
-    <section v-if="viewMode === 'pdf'"
-class="pdf-section">
-      <div class="container">
-        <div class="pdf-container">
-          <iframe
-            :src="pdfUrl"
-            width="100%"
-            height="800px"
-            frameborder="0"
-            title="Esh James Resume PDF"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Structured Resume -->
-    <section v-else
-class="structured-resume">
+    <div class="structured-resume" v-if="viewMode === 'structured'">
       <div class="container">
         <!-- Personal Information -->
         <div class="resume-section">
@@ -58,32 +32,33 @@ class="structured-resume">
           </h2>
           <div class="personal-info">
             <div class="info-item">
-<strong>Name:</strong> Esh James
-</div>
+              <strong>Name:</strong> {{ profileStore.personalInfo.name }}
+            </div>
             <div class="info-item">
-              <strong>Title:</strong> DevOps Engineer & PHP Developer
+              <strong>Title:</strong> {{ profileStore.personalInfo.title }}
             </div>
             <div class="info-item">
               <strong>Email:</strong>
-              <a href="mailto:esh@eshjames.dev">esh@eshjames.dev</a>
+              <a :href="`mailto:${profileStore.personalInfo.email}`">{{ profileStore.personalInfo.email }}</a>
             </div>
             <div class="info-item">
-              <strong>Phone:</strong> +1 (555) 123-4567
+              <strong>Phone:</strong>
+              <a :href="`tel:${profileStore.personalInfo.phone}`">{{ profileStore.personalInfo.phone }}</a>
             </div>
             <div class="info-item">
-              <strong>Location:</strong> San Francisco, CA
+              <strong>Location:</strong> {{ profileStore.personalInfo.location }}
             </div>
-            <div class="info-item">
+            <div class="info-item" v-if="profileStore.personalInfo.linkedin">
               <strong>LinkedIn:</strong>
-              <a
-href="https://linkedin.com/in/eshjames" target="_blank"
-              >linkedin.com/in/eshjames</a>
+              <a :href="profileStore.personalInfo.linkedin" target="_blank">{{ profileStore.personalInfo.linkedin.replace('https://', '') }}</a>
             </div>
-            <div class="info-item">
+            <div class="info-item" v-if="profileStore.personalInfo.github">
               <strong>GitHub:</strong>
-              <a
-href="https://github.com/eshjames" target="_blank"
-              >github.com/eshjames</a>
+              <a :href="profileStore.personalInfo.github" target="_blank">{{ profileStore.personalInfo.github.replace('https://', '') }}</a>
+            </div>
+            <div class="info-item" v-if="profileStore.personalInfo.website">
+              <strong>Website:</strong>
+              <a :href="profileStore.personalInfo.website" target="_blank">{{ profileStore.personalInfo.website.replace('https://', '') }}</a>
             </div>
           </div>
         </div>
@@ -96,40 +71,8 @@ href="https://github.com/eshjames" target="_blank"
           </h2>
           <div class="summary-content">
             <p>
-              Experienced DevOps Engineer and PHP Developer with 5+ years of
-              expertise in cloud infrastructure, automation, and full-stack
-              development. Proven track record of implementing scalable
-              solutions, optimizing CI/CD pipelines, and managing complex
-              deployments across AWS environments. Strong background in
-              containerization, infrastructure as code, and modern PHP
-              frameworks.
+              {{ profileStore.summary }}
             </p>
-          </div>
-        </div>
-
-        <!-- Technical Skills -->
-        <div class="resume-section">
-          <h2 class="section-title">
-            <i class="fas fa-code" />
-            Technical Skills
-          </h2>
-          <div class="skills-grid">
-            <div
-              v-for="(skills, category) in skillsByCategory"
-              :key="category"
-              class="skill-category"
-            >
-              <h3>{{ category }}</h3>
-              <div class="skill-tags">
-                <span
-                  v-for="skill in skills"
-                  :key="skill.name"
-                  class="skill-tag"
-                >
-                  {{ skill.name }}
-                </span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -141,7 +84,7 @@ href="https://github.com/eshjames" target="_blank"
           </h2>
           <div class="experience-list">
             <div
-              v-for="(exp, index) in experiences"
+              v-for="(exp, index) in profileStore.experience"
               :key="index"
               class="experience-item"
             >
@@ -153,28 +96,25 @@ href="https://github.com/eshjames" target="_blank"
                 </div>
               </div>
               <div class="experience-content">
-                <p class="description">
-                  {{ exp.description }}
-                </p>
                 <div class="achievements">
                   <h4>Key Achievements:</h4>
                   <ul>
                     <li
-                      v-for="achievement in exp.achievements"
-                      :key="achievement"
+                      v-for="highlight in exp.highlights"
+                      :key="highlight"
                     >
-                      {{ achievement }}
+                      {{ highlight }}
                     </li>
                   </ul>
                 </div>
                 <div class="technologies">
                   <strong>Technologies:</strong>
                   <span
-                    v-for="tech in exp.technologies"
-                    :key="tech"
+                    v-for="task in exp.tasks"
+                    :key="task"
                     class="tech-tag"
                   >
-                    {{ tech }}
+                    {{ task }}
                   </span>
                 </div>
               </div>
@@ -190,44 +130,60 @@ href="https://github.com/eshjames" target="_blank"
           </h2>
           <div class="education-list">
             <div
-              v-for="(edu, index) in education"
+              v-for="(edu, index) in profileStore.education"
               :key="index"
               class="education-item"
             >
-              <div class="education-header">
-                <h3>{{ edu.degree }}</h3>
-                <div class="education-meta">
-                  <span class="institution">{{ edu.institution }}</span>
-                  <span class="period">{{ edu.period }}</span>
-                </div>
+              <h3>{{ edu.degree }}</h3>
+              <div class="education-meta">
+                <span class="institution">{{ edu.institution }}</span>
+                <span class="period">{{ edu.period }}</span>
               </div>
-              <div class="education-content">
-                <p>{{ edu.description }}</p>
-                <div v-if="edu.gpa"
-class="gpa">
-                  <strong>GPA:</strong> {{ edu.gpa }}
-                </div>
+              <p>{{ edu.description }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Overview -->
+        <div class="resume-section">
+          <h2 class="section-title">
+            <i class="fas fa-tools" />
+            Technical Skills
+          </h2>
+          <div class="skills-overview">
+            <div class="skill-category" 
+                 v-for="(skills, category) in profileStore.skillsByCategory"
+                 :key="category">
+              <h3>{{ category }}</h3>
+              <div class="skills-list">
+                <span 
+                  v-for="skill in skills" 
+                  :key="skill.name"
+                  class="skill-item"
+                >
+                  {{ skill.name }}
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Certifications -->
-        <div class="resume-section">
+        <div class="resume-section" v-if="profileStore.certifications && profileStore.certifications.length">
           <h2 class="section-title">
             <i class="fas fa-certificate" />
             Certifications
           </h2>
           <div class="certifications-list">
             <div
-              v-for="(cert, index) in certifications"
+              v-for="(cert, index) in profileStore.certifications"
               :key="index"
               class="certification-item"
             >
-              <div class="cert-header">
-                <h3>{{ cert.name }}</h3>
-                <span class="cert-issuer">{{ cert.issuer }}</span>
-                <span class="cert-date">{{ cert.date }}</span>
+              <h3>{{ cert.name }}</h3>
+              <div class="certification-meta">
+                <span class="issuer">{{ cert.issuer }}</span>
+                <span class="date">{{ cert.date }}</span>
               </div>
               <p v-if="cert.description">
                 {{ cert.description }}
@@ -235,8 +191,45 @@ class="gpa">
             </div>
           </div>
         </div>
+
+        <!-- Key Achievements -->
+        <div class="resume-section" v-if="profileStore.achievements && profileStore.achievements.length">
+          <h2 class="section-title">
+            <i class="fas fa-trophy" />
+            Key Achievements
+          </h2>
+          <div class="achievements-list">
+            <div
+              v-for="(achievement, index) in profileStore.achievements"
+              :key="index"
+              class="achievement-item"
+            >
+              {{ achievement }}
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <!-- PDF Viewer -->
+    <div v-else class="pdf-viewer">
+      <div class="pdf-container">
+        <iframe 
+          :src="pdfUrl" 
+          width="100%" 
+          height="800px"
+          frameborder="0"
+        >
+          <p>Your browser does not support iframes.</p>
+        </iframe>
+      </div>
+      <div class="pdf-actions">
+        <a :href="pdfUrl" target="_blank" class="btn btn-primary">
+          <i class="fas fa-download"></i>
+          <span>Download PDF</span>
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -245,106 +238,13 @@ import { ref } from 'vue'
 import { useProfileStore } from '@/stores/profile'
 
 const profileStore = useProfileStore()
-const { resumeData } = profileStore
 
 const viewMode = ref('structured') // 'pdf' or 'structured'
-const pdfUrl = ref('/Esh James (PHP).pdf')
+const pdfUrl = ref('/portfolio/Esh James (PHP).pdf')
 
 const toggleView = () => {
   viewMode.value = viewMode.value === 'pdf' ? 'structured' : 'pdf'
 }
-
-const experiences = [
-  {
-    position: 'Senior DevOps Engineer',
-    company: 'Tech Solutions Inc.',
-    period: '2022 - Present',
-    description:
-      'Leading cloud infrastructure initiatives and implementing CI/CD pipelines for high-traffic applications.',
-    achievements: [
-      'Reduced deployment time by 60% through automated CI/CD pipeline implementation',
-      'Managed Kubernetes clusters serving 10M+ daily requests',
-      'Implemented infrastructure as code using Terraform, reducing manual configuration by 80%',
-      'Led migration of legacy systems to AWS cloud infrastructure',
-    ],
-    technologies: [
-      'AWS',
-      'Kubernetes',
-      'Terraform',
-      'Docker',
-      'Jenkins',
-      'Ansible',
-    ],
-  },
-  {
-    position: 'PHP Developer',
-    company: 'Web Development Co.',
-    period: '2020 - 2022',
-    description:
-      'Developed scalable web applications using Laravel and Symfony frameworks.',
-    achievements: [
-      'Built RESTful APIs handling 1M+ requests per day',
-      'Optimized database queries resulting in 40% performance improvement',
-      'Implemented microservices architecture for better scalability',
-      'Mentored junior developers and conducted code reviews',
-    ],
-    technologies: ['PHP', 'Laravel', 'Symfony', 'MySQL', 'Redis', 'Docker'],
-  },
-  {
-    position: 'Full-Stack Developer',
-    company: 'Digital Agency',
-    period: '2019 - 2020',
-    description:
-      'Built responsive web applications and collaborated with design teams.',
-    achievements: [
-      'Developed 15+ client websites with modern frontend frameworks',
-      'Implemented responsive designs with mobile-first approach',
-      'Integrated third-party APIs and payment gateways',
-      'Maintained 99.9% uptime for client applications',
-    ],
-    technologies: ['PHP', 'JavaScript', 'Vue.js', 'CSS', 'Git', 'MySQL'],
-  },
-]
-
-const education = [
-  {
-    degree: 'Bachelor of Computer Science',
-    institution: 'University of Technology',
-    period: '2015 - 2019',
-    description:
-      'Focused on software engineering, algorithms, data structures, and database systems.',
-    gpa: '3.8/4.0',
-  },
-]
-
-const certifications = [
-  {
-    name: 'AWS Certified Solutions Architect - Professional',
-    issuer: 'Amazon Web Services',
-    date: '2023',
-    description:
-      'Professional certification in designing distributed systems on AWS',
-  },
-  {
-    name: 'Certified Kubernetes Administrator (CKA)',
-    issuer: 'Cloud Native Computing Foundation',
-    date: '2022',
-    description:
-      'Certification in Kubernetes cluster administration and troubleshooting',
-  },
-  {
-    name: 'Laravel Certified Developer',
-    issuer: 'Laravel LLC',
-    date: '2021',
-    description: 'Professional certification in Laravel framework development',
-  },
-  {
-    name: 'Docker Certified Associate',
-    issuer: 'Docker Inc.',
-    date: '2021',
-    description: 'Certification in containerization and Docker platform',
-  },
-]
 </script>
 
 <style scoped>
@@ -352,14 +252,10 @@ const certifications = [
   padding-top: 80px;
 }
 
-/* Hero Section */
 .resume-hero {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
   padding: 4rem 0;
-  background: linear-gradient(
-    135deg,
-    var(--color-surface) 0%,
-    var(--color-background) 100%
-  );
   text-align: center;
 }
 
@@ -367,33 +263,36 @@ const certifications = [
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--color-text);
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--color-text-muted);
+  opacity: 0.9;
   margin-bottom: 2rem;
 }
 
-.resume-actions {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+.view-toggle {
+  margin-top: 2rem;
 }
 
-/* PDF Section */
-.pdf-section {
-  padding: 2rem 0;
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
-.pdf-container {
-  background: var(--color-surface);
-  border-radius: 12px;
-  padding: 1rem;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.toggle-btn i {
+  margin-right: 0.5rem;
 }
 
 /* Structured Resume */
@@ -450,41 +349,6 @@ const certifications = [
   text-decoration: underline;
 }
 
-/* Summary */
-.summary-content p {
-  color: var(--color-text-muted);
-  line-height: 1.7;
-  font-size: 1.125rem;
-}
-
-/* Skills */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.skill-category h3 {
-  color: var(--color-text);
-  margin-bottom: 1rem;
-  font-size: 1.125rem;
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.skill-tag {
-  background: var(--color-primary);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
 /* Experience */
 .experience-list {
   display: flex;
@@ -493,14 +357,18 @@ const certifications = [
 }
 
 .experience-item {
-  border-left: 4px solid var(--color-primary);
-  padding-left: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.experience-item:last-child {
+  border-bottom: none;
 }
 
 .experience-header h3 {
-  color: var(--color-text);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  color: var(--color-text);
 }
 
 .experience-meta {
@@ -510,59 +378,52 @@ const certifications = [
 }
 
 .company {
-  color: var(--color-primary);
   font-weight: 600;
+  color: var(--color-primary);
 }
 
 .period {
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
+  color: var(--color-secondary);
 }
 
-.experience-content .description {
-  color: var(--color-text-muted);
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.achievements {
+.experience-content .achievements {
   margin-bottom: 1rem;
 }
 
-.achievements h4 {
+.experience-content .achievements h4 {
+  margin-bottom: 0.5rem;
   color: var(--color-text);
   font-size: 1rem;
-  margin-bottom: 0.5rem;
 }
 
-.achievements ul {
-  margin-left: 1.5rem;
+.experience-content .achievements ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.experience-content .achievements li {
+  margin-bottom: 0.25rem;
   color: var(--color-text-muted);
-}
-
-.achievements li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
 }
 
 .technologies {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
 .technologies strong {
   color: var(--color-text);
+  margin-right: 0.5rem;
 }
 
 .tech-tag {
-  background: var(--color-surface);
-  color: var(--color-text-muted);
+  display: inline-block;
+  background: var(--color-bg-muted);
+  color: var(--color-text);
   padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.75rem;
-  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 /* Education */
@@ -572,118 +433,144 @@ const certifications = [
   gap: 1.5rem;
 }
 
-.education-item {
-  border-left: 4px solid var(--color-accent);
-  padding-left: 1.5rem;
-}
-
-.education-header h3 {
-  color: var(--color-text);
-  font-size: 1.125rem;
+.education-item h3 {
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  color: var(--color-text);
 }
 
 .education-meta {
   display: flex;
   gap: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-.institution {
-  color: var(--color-primary);
-  font-weight: 600;
-}
-
-.education-content p {
-  color: var(--color-text-muted);
-  line-height: 1.6;
   margin-bottom: 0.5rem;
 }
 
-.gpa {
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
+.institution {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Skills */
+.skills-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-category h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.25rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-item {
+  background: var(--color-bg-muted);
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
 }
 
 /* Certifications */
 .certifications-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
 .certification-item {
-  background: var(--color-background);
+  border: 1px solid var(--color-border);
   padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid var(--color-border);
+  background: var(--color-bg-muted);
 }
 
-.cert-header {
+.certification-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.certification-meta {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  justify-content: space-between;
   margin-bottom: 0.75rem;
 }
 
-.cert-header h3 {
-  color: var(--color-text);
-  font-size: 1rem;
-}
-
-.cert-issuer {
-  color: var(--color-primary);
+.issuer {
   font-weight: 600;
-  font-size: 0.875rem;
+  color: var(--color-primary);
 }
 
-.cert-date {
-  color: var(--color-text-muted);
-  font-size: 0.75rem;
+.date {
+  color: var(--color-secondary);
 }
 
-.certification-item p {
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
-  line-height: 1.5;
+/* Achievements */
+.achievements-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
 }
 
-/* Mobile Styles */
+.achievement-item {
+  background: var(--color-bg-muted);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary);
+  color: var(--color-text);
+}
+
+/* PDF Viewer */
+.pdf-viewer {
+  padding: 4rem 0;
+}
+
+.pdf-container {
+  background: var(--color-surface);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-border);
+}
+
+.pdf-actions {
+  text-align: center;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
-
-  .resume-actions {
-    flex-direction: column;
-    align-items: center;
+  
+  .structured-resume {
+    padding: 2rem 0;
   }
-
-  .personal-info {
-    grid-template-columns: 1fr;
+  
+  .resume-section {
+    padding: 1.5rem;
   }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
+  
   .experience-meta,
-  .education-meta {
+  .education-meta,
+  .certification-meta {
     flex-direction: column;
     gap: 0.25rem;
   }
-
-  .technologies {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
+  
+  .skills-overview,
   .certifications-list {
     grid-template-columns: 1fr;
-  }
-
-  .resume-section {
-    padding: 1.5rem;
   }
 }
 </style>

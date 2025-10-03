@@ -12,7 +12,7 @@ const routes = [
     component: Home,
     meta: {
       title: 'Home - Esh James Portfolio',
-      description: 'Welcome to Esh James portfolio - DevOps and PHP Developer',
+      description: 'Welcome to Esh James portfolio - Senior Full Stack Developer',
     },
   },
   {
@@ -21,7 +21,7 @@ const routes = [
     component: About,
     meta: {
       title: 'About - Esh James',
-      description: 'Learn more about Esh James, DevOps and PHP Developer',
+      description: 'Learn more about Esh James, Senior Full Stack Developer',
     },
   },
   {

@@ -6,7 +6,7 @@ export const config = {
   app: {
     name: 'Esh James Portfolio',
     version: '1.0.0',
-    description: 'DevOps Engineer & PHP Developer Portfolio',
+    description: 'Senior Full Stack Developer Portfolio',
     url: import.meta.env.VITE_APP_URL || 'https://eshjames.dev',
     author: 'Esh James',
     email: 'esh@eshjames.dev',
@@ -58,9 +58,9 @@ export const config = {
 
   // SEO configuration
   seo: {
-    defaultTitle: 'Esh James - DevOps Engineer & PHP Developer',
+    defaultTitle: 'Esh James - Senior Full Stack Developer',
     defaultDescription:
-      'Experienced DevOps Engineer and PHP Developer specializing in cloud infrastructure, automation, and full-stack development.',
+      'Experienced Senior Full Stack Developer specializing in Laravel, Vue.js, and modern PHP development.',
     keywords: [
       'DevOps',
       'PHP Developer',

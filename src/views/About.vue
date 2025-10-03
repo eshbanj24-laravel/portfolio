@@ -6,7 +6,7 @@
         <div class="hero-content">
           <h1 class="hero-title">About Me</h1>
           <p class="hero-subtitle">
-            Passionate DevOps Engineer and PHP Developer with a focus on
+            Passionate Senior Full Stack Developer specializing in
             scalable solutions
           </p>
         </div>

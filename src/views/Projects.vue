@@ -6,8 +6,7 @@
         <div class="hero-content">
           <h1 class="hero-title">My Projects</h1>
           <p class="hero-subtitle">
-            A collection of my work showcasing DevOps practices, PHP
-            development, and cloud infrastructure solutions
+            A collection of my work showcasing Laravel development, Vue.js frontend, and scalable web solutions
           </p>
         </div>
       </div>

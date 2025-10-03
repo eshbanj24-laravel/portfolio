@@ -85,11 +85,9 @@ class="error-message">{{
                 class="btn btn-primary submit-btn"
                 :disabled="isSubmitting"
               >
-                <i
-v-if="isSubmitting" class="fas fa-spinner fa-spin" />
-                <i
-v-else class="fas fa-paper-plane" />
-                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                <i v-if="isSubmitting" class="fas fa-spinner fa-spin"></i>
+                <i v-else class="fas fa-paper-plane"></i>
+                <span>{{ isSubmitting ? 'Sending...' : 'Send Message' }}</span>
               </button>
             </form>
 
@@ -116,7 +114,7 @@ class="success-message">
                 </div>
                 <div class="method-content">
                   <h3>Email</h3>
-                  <a href="mailto:esh@eshjames.dev">esh@eshjames.dev</a>
+                  <a :href="`mailto:${profileStore.personalInfo.email}`">{{ profileStore.personalInfo.email }}</a>
                   <p>Send me an email anytime</p>
                 </div>
               </div>
@@ -127,7 +125,7 @@ class="success-message">
                 </div>
                 <div class="method-content">
                   <h3>Phone</h3>
-                  <a href="tel:+15551234567">+1 (555) 123-4567</a>
+                  <a :href="`tel:${profileStore.personalInfo.phone}`">{{ profileStore.personalInfo.phone }}</a>
                   <p>Available Monday - Friday</p>
                 </div>
               </div>
@@ -138,7 +136,7 @@ class="success-message">
                 </div>
                 <div class="method-content">
                   <h3>Location</h3>
-                  <span>San Francisco, CA</span>
+                  <span>{{ profileStore.personalInfo.location }}</span>
                   <p>Open to remote work</p>
                 </div>
               </div>
@@ -149,7 +147,8 @@ class="success-message">
               <h3>Follow me</h3>
               <div class="social-links">
                 <a
-                  href="https://github.com/eshjames"
+                  v-if="profileStore.personalInfo.github"
+                  :href="profileStore.personalInfo.github"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="social-link"
@@ -158,7 +157,8 @@ class="success-message">
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/eshjames"
+                  v-if="profileStore.personalInfo.linkedin"
+                  :href="profileStore.personalInfo.linkedin"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="social-link"
@@ -207,6 +207,9 @@ class="success-message">
 
 <script setup>
 import { ref, reactive } from 'vue'
+import { useProfileStore } from '@/stores/profile'
+
+const profileStore = useProfileStore()
 
 const form = reactive({
   name: '',

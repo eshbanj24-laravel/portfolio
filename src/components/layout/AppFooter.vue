@@ -5,7 +5,7 @@
         <!-- Brand Section -->
         <div class="footer-brand">
           <h3>Esh James</h3>
-          <p>DevOps & PHP Developer</p>
+          <p>Senior Full Stack Developer</p>
           <p class="footer-description">
             Passionate about building scalable cloud infrastructure and robust
             web applications.

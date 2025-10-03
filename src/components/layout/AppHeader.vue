@@ -7,7 +7,7 @@
           <router-link to="/"
 class="navbar-brand">
             <span class="brand-text">Esh James</span>
-            <span class="brand-subtitle">DevOps & PHP Developer</span>
+            <span class="brand-subtitle">Senior Full Stack Developer</span>
           </router-link>
 
           <!-- Mobile Menu Toggle -->
